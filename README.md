@@ -1,4 +1,4 @@
-<img src="style/gsq.jpg" style="width:25%" />  
+<img src="images/gsq.jpg" style="width:25%" />  
 
 # GSQ Geological Administrative Features Ontology
 This ontology defines a series of subclasses of the [GeoSPARQL Ontology's](https://www.opengeospatial.org/standards/geosparql) `Feature` class that are used by the [Geological Survey of Queensland](http://linked.data.gov.au/org/gsq) to admininster geologically-based resource extraction in the Australian state of Queensland. The classes include `Block`, `Permit` etc., some of which are defined in Queensland or Australian legislation.

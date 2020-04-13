@@ -1,5 +1,5 @@
 @prefix : <http://linked.data.gov.au/def/geoadminfeatures#> .
-@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -16,67 +16,37 @@
 
 <http://linked.data.gov.au/def/geoadminfeatures> rdf:type owl:Ontology ;
                                                   owl:imports <http://www.opengis.net/ont/geosparql> ;
-                                                  dct:created "2019-12-04"^^xsd:date ;
-                                                  dct:creator [ rdf:type sdo:Person ;
-                                                                sdo:affiliation [ rdf:type sdo:Organization ;
-                                                                                  sdo:identifier <https://surroundaustralia.com> ;
-                                                                                  sdo:name "SURROUND Australia Pty Ltd"
-                                                                                ] ;
-                                                                sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-                                                                sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
-                                                                sdo:name "Nicholas J. Car"
-                                                              ] ,
+                                                  dcterms:created "2019-12-04"^^xsd:date ;
+                                                  dcterms:creator <https://orcid.org/0000-0002-8742-7730> ,
                                                               <http://linked.data.gov.au/org/gsq> ;
-                                                              dct:description """This ontology describes classes of geospatial feature relevant to the administrative duties of the Geological Survey of Queensland.
+                                                              dcterms:description """This ontology describes a class hierarchy relevant to the administrative duties of the Geological Survey of Queensland.
 
-As subclasses of the GeoSPARQL Ontology's `Feature` class, this ontology defines an `Administrative Feature`. Multiple subclasses of this class are then defined, some with class interrelations. The classes include `Block`, `Permit` etc., some of which are defined in Queensland or Australian legislation.
+Within a class hierarchy starting at GeoSPARQL Ontology's `Feature` class, this ontology defines an `Administrative Feature` subclass and further subclasses of it, some with class interrelations. The classes defined include `Block`, `Permit` etc., some of which are defined in Queensland or Australian legislation.
 
-This ontology is part of the Geological Survey of Queensland's set of *component* ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Profile of SWEET which defined multiple classes of geological feature. It is yet to be published."""@en ;
-                                                  dct:modified "2020-01-08"^^xsd:date ;                                               
-                                                  dct:publisher <http://linked.data.gov.au/org/gsq> ;
-                                                  dct:title "GSQ Geological Administrative Features Ontology"@en ;
+This ontology is part of the Geological Survey of Queensland's set of *component* ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Ontology which defines multiple classes of geological feature."""@en ;
+                                                  dcterms:modified "2020-04-15"^^xsd:date ;
+                                                  dcterms:publisher <http://linked.data.gov.au/org/gsq> ;
+                                                  dcterms:title "GSQ Geological Administrative Features Ontology"@en ;
                                                   sdo:codeRepository <https://github.com/geological-survey-of-queensland/gsq-geoadmin-features-ont> .
 
 <http://linked.data.gov.au/org/gsq>
   rdf:type sdo:Organization ;
   sdo:email <mailto:geological_info@dnrme.qld.gov.au> ;
+  sdo:url <https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq> ;
   sdo:name "Geological Survey of Queensland" ;
 .
 
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/created
-dct:created rdf:type owl:AnnotationProperty .
-
-
-###  http://usefulinc.com/ns/doap#repository
-doap:repository rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/affiliation
-sdo:affiliation rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/codeRepository
-sdo:codeRepository rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/email
-sdo:email rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/identifier
-sdo:identifier rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/name
-sdo:name rdf:type owl:AnnotationProperty .
-
-
-###  https://schema.org/parentOrganization
-sdo:parentOrganization rdf:type owl:AnnotationProperty .
+<https://orcid.org/0000-0002-8742-7730>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:affiliation [
+      a sdo:Organization ;
+      sdo:name "SURROUND Australia Pty Ltd" ;
+      sdo:url <https://surroundaustralia.com> ;
+    ] ;
+  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+  sdo:name "Nicholas J. Car" ;
+.
 
 
 #################################################################
@@ -87,21 +57,21 @@ sdo:parentOrganization rdf:type owl:AnnotationProperty .
 geoaf:AdministrativeFeature rdf:type owl:Class ;
                             rdfs:subClassOf geo:Feature ;
                             skos:definition "An Administrative Feature is a geo:Feature that is defined by adminstrative processes such as legislation, regulation, policy or procedure."@en ;
-                            skos:prefLabel "Administrative feature" .
+                            skos:prefLabel "Administrative feature"@en .
 
 
 ###  http://linked.data.gov.au/def/geoadminfeatures#Block
 geoaf:Block rdf:type owl:Class ;
             rdfs:subClassOf geoaf:AdministrativeFeature ;
             skos:definition "A Block is an administrative division of the State of Queensland that is used for tenure management. A Block is defined as five minutes of latitude by five minutes of longitude. Blocks are grouped by 1:1,000,000 map sheet areas, the names of which provide the containing Blocks with a four letter prefix (e.g. Clermont 1:1,000,000 provides CLER). Each sheet area contains 3456 Blocks, with the Blocks numbered between 1 and 3456 inclusive. A Block is divided into 25 Sub-Blocks."@en ;
-            skos:prefLabel "Block" .
+            skos:prefLabel "Block"@en .
 
 
 ###  http://linked.data.gov.au/def/geoadminfeatures#Permit
 geoaf:Permit rdf:type owl:Class ;
              rdfs:subClassOf geoaf:AdministrativeFeature ;
              skos:definition "Permits are a license granted over a spatial region within the State of Queensland. Permits govern the activities which can be conducted upon them. Activities include exploration, development, and extraction of a specific commodity or commodities."@en ;
-             skos:prefLabel "Permit" .
+             skos:prefLabel "Permit"@en .
 
 
 ###  http://linked.data.gov.au/def/geoadminfeatures#SubBlock
@@ -113,60 +83,4 @@ geoaf:SubBlock rdf:type owl:Class ;
                                  owl:onClass geoaf:Block
                                ] ;
                skos:definition "A Sub-Block is an administrative sub-division of a Block. Each Block is divided into 25 Sub-Blocks. A Sub-Block is defined as one minute of latitude by one minute of longitude. The Sub-Blocks are prefixed with their corresponding Block name and are labelled from A to Z, excluding I. Labels are allocated from left to right, top to bottom, starting from the northwest corner."@en ;
-               skos:prefLabel "Sub-Block" .
-
-
-###  http://usefulinc.com/ns/doap#Project
-doap:Project rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/prov#Activity
-prov:Activity rdf:type owl:Class .
-
-
-###  https://schema.org/Organization
-sdo:Organization rdf:type owl:Class .
-
-
-###  https://schema.org/Person
-sdo:Person rdf:type owl:Class .
-
-
-[ rdf:type sdo:Person ;
-  sdo:affiliation [ rdf:type sdo:Organization ;
-                    sdo:identifier <https://surroundaustralia.com> ;
-                    sdo:name "SURROUND Australia Pty Ltd"
-                  ] ;
-  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-  sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
-  sdo:name "Nicholas J. Car"
-] .
-
-[ rdf:type sdo:Organization ;
-   sdo:email <mailto:geological_info@dnrme.qld.gov.au> ;
-   sdo:name "GSQ Informatics Staff" ;
-   sdo:parentOrganization <http://linked.data.gov.au/org/gsq>
- ] .
-
-[ rdf:type sdo:Person ;
-   sdo:affiliation [ rdf:type sdo:Organization ;
-                     sdo:identifier <https://surroundaustralia.com> ;
-                     sdo:name "SURROUND Australia Pty Ltd"
-                   ] ;
-   sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-   sdo:identifier <http://orcid.org/0000-0002-8742-7730> ;
-   sdo:name "Nicholas J. Car"
- ] .
-
-[ rdf:type sdo:Organization ;
-   sdo:email <mailto:geological_info@dnrme.qld.gov.au> ;
-   sdo:name "GSQ Informatics Staff" ;
-   sdo:parentOrganization <http://linked.data.gov.au/org/gsq>
- ] .
-
-[ rdf:type doap:Project ,
-            prov:Activity ;
-   doap:repository <https://github.com/geological-survey-of-queensland/geological-admininstrative-features-ont>
- ] .
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+               skos:prefLabel "Sub-Block"@en .

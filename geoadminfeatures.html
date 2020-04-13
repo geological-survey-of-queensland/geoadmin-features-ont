@@ -179,7 +179,7 @@ code {
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>This ontology describes classes of geospatial feature relevant to the administrative duties of the Geological Survey of Queensland.</p>\n<p>As subclasses of the GeoSPARQL Ontology's <code>Feature</code> class, this ontology defines an <code>Administrative Feature</code>. Multiple subclasses of this class are then defined, some with class interrelations. The classes include <code>Block</code>, <code>Permit</code> etc., some of which are defined in Queensland or Australian legislation.</p>\n<p>This ontology is part of the Geological Survey of Queensland's set of <em>component</em> ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Profile of SWEET which defined multiple classes of geological feature. It is yet to be published.</p>"
+        "@value": "<p>This ontology describes a class hierarchy relevant to the administrative duties of the Geological Survey of Queensland.</p>\n<p>Within a class hierarchy starting at GeoSPARQL Ontology's <code>Feature</code> class, this ontology defines an <code>Administrative Feature</code> subclass and further subclasses of it, some with class interrelations. The classes defined include <code>Block</code>, <code>Permit</code> etc., some of which are defined in Queensland or Australian legislation.</p>\n<p>This ontology is part of the Geological Survey of Queensland's set of <em>component</em> ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Ontology which defines multiple classes of geological feature.</p>"
       }
     ],
     "https://schema.org/name": [
@@ -193,7 +193,7 @@ code {
 </head>
 <body>
 <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">pyLODE</a></div>
-<img src="style/gsq.jpg" alt="GSQ Logo" />
+<img src="images/gsq.jpg" alt="GSQ Logo" />
 <h1>GSQ Geological Administrative Features Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -206,34 +206,33 @@ code {
         </dd>
         <dt>Creator(s)</dt>
         <dd>
-            <a href="http://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a> (<a href="mailto:nicholas.car@surroundaustralia.com">nicholas.car@surroundaustralia.com</a>) of <a href="https://surroundaustralia.com">SURROUND Australia Pty Ltd</a><br/>
             <a href="mailto:geological_info@dnrme.qld.gov.au">Geological Survey of Queensland</a><br/>
+            None<br/>
         </dd>
         <dt>Created</dt>
         <dd>2019-12-04</dd>
         <dt>Modified</dt>
-        <dd>2020-01-08</dd>
+        <dd>2020-04-15</dd>
         <dt>Imports</dt>
         <dd>
             <a href="http://www.opengis.net/ont/geosparql">http://www.opengis.net/ont/geosparql</a><br/>
         </dd>
-        <dt>Ontology Source</dt>
+        <dt>Ontology RDF</dt>
         <dd><a href="geoadminfeatures.ttl">RDF (turtle)</a></dd>
         <dt>Code Repository</dt>
         <dd><a href="https://github.com/geological-survey-of-queensland/gsq-geoadmin-features-ont">https://github.com/geological-survey-of-queensland/gsq-geoadmin-features-ont</a></dd>
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>This ontology describes classes of geospatial feature relevant to the administrative duties of the Geological Survey of Queensland.</p>
-<p>As subclasses of the GeoSPARQL Ontology's <code>Feature</code> class, this ontology defines an <code>Administrative Feature</code>. Multiple subclasses of this class are then defined, some with class interrelations. The classes include <code>Block</code>, <code>Permit</code> etc., some of which are defined in Queensland or Australian legislation.</p>
-<p>This ontology is part of the Geological Survey of Queensland's set of <em>component</em> ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Profile of SWEET which defined multiple classes of geological feature. It is yet to be published.</p>
+        <p>This ontology describes a class hierarchy relevant to the administrative duties of the Geological Survey of Queensland.</p>
+<p>Within a class hierarchy starting at GeoSPARQL Ontology's <code>Feature</code> class, this ontology defines an <code>Administrative Feature</code> subclass and further subclasses of it, some with class interrelations. The classes defined include <code>Block</code>, <code>Permit</code> etc., some of which are defined in Queensland or Australian legislation.</p>
+<p>This ontology is part of the Geological Survey of Queensland's set of <em>component</em> ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Ontology which defines multiple classes of geological feature.</p>
     </div>
 </section>
 <section id="toc">
     <h2>Table of Contents</h2>
     <ol>
         <li><a href="#classes">Classes</a></li>
-        <li><a href="#annotationproperties">Annotation Properties</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
     </ol>
@@ -248,13 +247,9 @@ code {
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#Activity">Activity</a></li>
         <li><a href="#Administrativefeature">Administrative feature</a></li>
         <li><a href="#Block">Block</a></li>
-        <li><a href="#Organization">Organization</a></li>
         <li><a href="#Permit">Permit</a></li>
-        <li><a href="#Person">Person</a></li>
-        <li><a href="#Project">Project</a></li>
         <li><a href="#Sub-Block">Sub-Block</a></li>
     </ul>
     <div class="entity class" id="Administrativefeature">
@@ -279,9 +274,9 @@ code {
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="#Permit">geoaf:Permit</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Block">geoaf:Block</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Sub-Block">geoaf:SubBlock</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Permit">geoaf:Permit</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -355,135 +350,13 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Project">
-        <h3>Project<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://usefulinc.com/ns/doap#Project</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Activity">
-        <h3>Activity<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/ns/prov#Activity</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Organization">
-        <h3>Organization<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/Organization</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Person">
-        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/Person</code></td>
-            </tr>
-        </table>
-    </div>
 </section>
-<section id="annotationproperties">
-    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hlist">
-        <li><a href="#created">created</a></li>
-        <li><a href="#repository">repository</a></li>
-        <li><a href="#affiliation">affiliation</a></li>
-        <li><a href="#codeRepository">codeRepository</a></li>
-        <li><a href="#email">email</a></li>
-        <li><a href="#identifier">identifier</a></li>
-        <li><a href="#name">name</a></li>
-        <li><a href="#parentOrganization">parentOrganization</a></li>
-    </ul>
-    <div class="entity property" id="created">
-        <h3>created<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/created</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="repository">
-        <h3>repository<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://usefulinc.com/ns/doap#repository</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="affiliation">
-        <h3>affiliation<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/affiliation</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="codeRepository">
-        <h3>codeRepository<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/codeRepository</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="email">
-        <h3>email<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/email</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="identifier">
-        <h3>identifier<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/identifier</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="name">
-        <h3>name<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/name</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="parentOrganization">
-        <h3>parentOrganization<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/parentOrganization</code></td>
-            </tr>
-        </table>
-    </div>
-</section>
-
 <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
         <dt><em>default (:)</em></dt>
         <dd><code>http://linked.data.gov.au/def/geoadminfeatures#</code></dd>
-        <dt>dct</dt>
+        <dt>dcterms</dt>
         <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>doap</dt>
         <dd><code>http://usefulinc.com/ns/doap#</code></dd>
