@@ -94,7 +94,10 @@ WHERE {
         skos:prefLabel ?pl ;
         skos:definition ?def .
 
-    OPTIONAL { ?s rdfs:subClassOf ?s2 . }
+    OPTIONAL { 
+        ?s rdfs:subClassOf ?s2 .
+        FILTER isIRI(?s2) 
+    }
     OPTIONAL { ?s dcterms:source ?source . }
     OPTIONAL { ?s skos:notation ?n . }
 }
