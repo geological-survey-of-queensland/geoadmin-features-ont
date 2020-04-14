@@ -17,16 +17,15 @@
 <http://linked.data.gov.au/def/geoadminfeatures> rdf:type owl:Ontology ;
                                                   owl:imports <http://www.opengis.net/ont/geosparql> ;
                                                   dcterms:created "2019-12-04"^^xsd:date ;
-                                                  dcterms:creator <https://orcid.org/0000-0002-8742-7730> ,
-                                                              <http://linked.data.gov.au/org/gsq> ;
-                                                              dcterms:description """This ontology describes a class hierarchy relevant to the administrative duties of the Geological Survey of Queensland.
+                                                  dcterms:creator <http://linked.data.gov.au/org/gsq> ;
+                                                  skos:definition """This ontology describes a class hierarchy relevant to the administrative duties of the Geological Survey of Queensland.
 
 Within a class hierarchy starting at GeoSPARQL Ontology's `Feature` class, this ontology defines an `Administrative Feature` subclass and further subclasses of it, some with class interrelations. The classes defined include `Block`, `Permit` etc., some of which are defined in Queensland or Australian legislation.
 
 This ontology is part of the Geological Survey of Queensland's set of *component* ontologies that together provide definitions for all of GSQ's data. Of particular importance for this ontology is GSQ's Geological Features Ontology which defines multiple classes of geological feature."""@en ;
                                                   dcterms:modified "2020-04-15"^^xsd:date ;
                                                   dcterms:publisher <http://linked.data.gov.au/org/gsq> ;
-                                                  dcterms:title "GSQ Geological Administrative Features Ontology"@en ;
+                                                  skos:prefLabel "GSQ Geological Administrative Features Ontology"@en ;
                                                   sdo:codeRepository <https://github.com/geological-survey-of-queensland/gsq-geoadmin-features-ont> .
 
 <http://linked.data.gov.au/org/gsq>
@@ -34,17 +33,6 @@ This ontology is part of the Geological Survey of Queensland's set of *component
   sdo:email <mailto:geological_info@dnrme.qld.gov.au> ;
   sdo:url <https://www.business.qld.gov.au/industries/mining-energy-water/resources/geoscience-information/gsq> ;
   sdo:name "Geological Survey of Queensland" ;
-.
-
-<https://orcid.org/0000-0002-8742-7730>
-  a sdo:Person ;
-  sdo:affiliation [
-      a sdo:Organization ;
-      sdo:name "SURROUND Australia Pty Ltd" ;
-      sdo:url <https://surroundaustralia.com> ;
-    ] ;
-  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-  sdo:name "Nicholas J. Car" ;
 .
 
 
