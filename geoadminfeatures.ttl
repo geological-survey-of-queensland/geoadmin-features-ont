@@ -37,7 +37,6 @@ This ontology is part of the Geological Survey of Queensland's set of *component
 .
 
 <https://orcid.org/0000-0002-8742-7730>
-  a owl:NamedIndividual ;
   a sdo:Person ;
   sdo:affiliation [
       a sdo:Organization ;
