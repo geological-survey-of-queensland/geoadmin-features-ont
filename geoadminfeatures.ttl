@@ -26,7 +26,7 @@ This ontology is part of the Geological Survey of Queensland's set of *component
                                                   dcterms:modified "2020-04-15"^^xsd:date ;
                                                   dcterms:publisher <https://linked.data.gov.au/org/gsq> ;
                                                   skos:prefLabel "GSQ Geological Administrative Features Ontology"@en ;
-                                                  sdo:codeRepository "https://github.com/geological-survey-of-queensland/gsq-geoadmin-features-ont"^^xsd:anyURI .
+                                                  sdo:codeRepository "https://github.com/geological-survey-of-queensland/gsq-geoadmin-features-ont/"^^xsd:anyURI .
 
 <https://linked.data.gov.au/org/gsq>
   rdf:type sdo:Organization ;
