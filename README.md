@@ -15,22 +15,8 @@ Geological Survey of Queensland (2019) "Geological Administrative Features Ontol
 
 
 ## Contacts
-*System owner*:  
-**Mark Gordon**,
+**Geoscience Information Team**,
 Geological Survey of Queensland,
 Department of Resources,
 Brisbane, QLD, Australia,
-<mark.gordon@resources.qld.gov.au>  
-
-*Contributors*:  
-**Vance Kelly**,
-Principal Data Manager,
-Geological Survey of Queensland,
-Department of Resources,
-Brisbane, QLD, Australia,  
-<vance.kelly@resources.qld.gov.au> 
-
-**Nicholas Car**  
-SURROUND Australia Pty Ltd  
-<nicholas.car@surroundaustralia.com>  
-<http://orcid.org/0000-0002-8742-7730>  
+<geological_info@resources.qld.gov.au>
